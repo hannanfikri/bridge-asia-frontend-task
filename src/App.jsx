@@ -14,7 +14,7 @@ function App() {
       <FormProvider {...formMethod}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col gap-4 md:py-4'>
-            <div className="max-w-screen-lg mx-auto p-4 bg-white shadow-md rounded-lg">
+            <div className="max-w-screen-lg mx-auto p-4 bg-white shadow-md rounded-lg transition-all duration-700 opacity-0 translate-y-8 animate-[fadeInUp_0.7s_ease-in-out_forwards] mb-8">
               <DetailsForm />
               <QuestionsForm questions={questions} />
             </div>
