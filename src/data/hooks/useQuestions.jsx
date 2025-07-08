@@ -1,9 +1,8 @@
-import { useMemo } from 'react';
-import questionsData from '../questions';
+import { useFormContext } from "react-hook-form";
 
-const useQuestions = () => {
-    const questions = useMemo(() => questionsData, [])
-    return { questions };
-};
-
-export default useQuestions;
+export const useQuestions = () => {
+    const formMethod = useFormContext();
+    return {
+        formMethod
+    }
+}
