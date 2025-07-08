@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const Header = () => {
+export const Header = () => {
     const { t } = useTranslation("header");
     return (
         <header className="bg-slate-50 py-4 border-b border-slate-200 w-full">
@@ -10,5 +10,3 @@ const Header = () => {
         </header>
     );
 };
-
-export default Header;
