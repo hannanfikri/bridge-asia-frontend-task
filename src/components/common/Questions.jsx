@@ -1,11 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { Radio, RadioGroup } from '@headlessui/react';
+import { useQuestions } from "../../data/hooks";
 
-export const Questions = ({ questionNo, totalQuestions, question, options, answer, selected, onChange }) => {
-    const optionLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+export const Questions = ({ questionNo, totalQuestions, question, options, selected, onChange }) => {
+    const { t } = useTranslation("common");
+    const { optionLabels } = useQuestions();
+
     return (
         <div className="space-y-4">
             <div className="flex flex-col gap-1">
-                <span className='text-sm text-gray-400'>Question {questionNo} of {totalQuestions} </span>
+                <span className='text-sm text-gray-400'>{t('questionNo', { questionNo, totalQuestions })}</span>
                 <span className='text-lg font-semibold'>{question}</span>
             </div>
             <RadioGroup value={selected} onChange={onChange}>

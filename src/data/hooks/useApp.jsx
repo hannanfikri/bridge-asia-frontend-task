@@ -1,9 +1,7 @@
-import { useMemo } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import questionsData from '../questions';
-import { useRef } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useMemo } from 'react';
 
 export const useApp = () => {
     const formMethod = useForm();
@@ -11,6 +9,7 @@ export const useApp = () => {
     const [playAnimation, setPlayAnimation] = useState(false);
     const animationTimeout = useRef();
     const questions = useMemo(() => questionsData, [])
+    
     useEffect(() => {
         // Stop animation if errors appear
         if (errors.answers && playAnimation) {

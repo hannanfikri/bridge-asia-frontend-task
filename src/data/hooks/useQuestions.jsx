@@ -1,8 +1,6 @@
-import { useFormContext } from "react-hook-form";
-
 export const useQuestions = () => {
-    const formMethod = useFormContext();
+    const optionLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return {
-        formMethod
+        optionLabels
     }
 }

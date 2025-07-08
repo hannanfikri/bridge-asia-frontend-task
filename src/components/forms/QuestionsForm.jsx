@@ -1,11 +1,11 @@
-import { useFormContext, Controller } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { Questions } from "../common/Questions";
 
-export const QuestionsForm = ({ questions }) => {
+export const QuestionsForm = ({questions}) => {
     const { control } = useFormContext();
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 px-4">
-            {questions.map(({ question, options, answer }, index) => (
+            {questions.map(({ question, options }, index) => (
                 <Controller
                     key={index}
                     name={`answers.${index}`}
@@ -17,7 +17,6 @@ export const QuestionsForm = ({ questions }) => {
                             totalQuestions={questions.length}
                             question={question}
                             options={options}
-                            answer={answer}
                             selected={field.value}
                             onChange={field.onChange}
                         />

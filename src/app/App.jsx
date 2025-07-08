@@ -1,11 +1,11 @@
 import { Button } from '@headlessui/react';
 import { FormProvider } from 'react-hook-form';
-import { DetailsForm, Footer, Header, QuestionsForm } from './components';
-import { AnimatedLogo } from './components/AnimatedLogo';
-import { useApp } from './data/hooks';
+import { DetailsForm, Footer, Header, QuestionsForm } from '../components';
+import { AnimatedLogo } from '../components/AnimatedLogo';
+import { useApp } from '../data/hooks';
 
-function App() {
-  const { questions, formMethod, onSubmit, playAnimation } = useApp();
+export const App = () => {
+  const { formMethod, onSubmit, playAnimation, questions } = useApp();
   const { handleSubmit, formState: { errors } } = formMethod;
 
   return (
@@ -40,5 +40,3 @@ function App() {
     </>
   )
 }
-
-export default App

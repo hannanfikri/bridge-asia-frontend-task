@@ -1,3 +1,11 @@
 {
-  "appTitle": "My App"
+  "questionNo": "Question {{questionNo}} of {{totalQuestions}}",
+  "placeholder": {
+    "Score will be shown here": "Score will be shown here",
+    "Enter your name": "Enter your name"
+  },
+  "required": "This field is required",
+  "detailsForm": {
+    "name": "Name"
+  }
 }
