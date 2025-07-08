@@ -33,8 +33,6 @@ export const useApp = () => {
             }, 0);
         }
         setValue('score', score);
-        console.log("Submitted Data:", data);
-        console.log("Score:", score);
     };
     return { questions, formMethod, onSubmit, playAnimation };
 };
