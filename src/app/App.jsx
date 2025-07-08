@@ -3,10 +3,12 @@ import { FormProvider } from 'react-hook-form';
 import { DetailsForm, Footer, Header, QuestionsForm } from '../components';
 import { AnimatedLogo } from '../components/AnimatedLogo';
 import { useApp } from '../data/hooks';
+import { useTranslation } from 'react-i18next';
 
 export const App = () => {
   const { formMethod, onSubmit, playAnimation, questions } = useApp();
   const { handleSubmit, reset, formState: { errors } } = formMethod;
+  const { t } = useTranslation("common");
 
   return (
     <>
@@ -20,7 +22,7 @@ export const App = () => {
             </div>
             {errors.answers && (
               <div className="text-center text-red-500 font-semibold text-lg">
-                Please answer all questions!
+                {t("Please answer all questions!")}
               </div>
             )}
             <div className="flex justify-center w-full">
@@ -30,7 +32,7 @@ export const App = () => {
                   className="w-1/2 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 text-white py-3 rounded-xl shadow-lg font-semibold text-lg tracking-wide transition-all duration-200 border-none hover:from-blue-700 hover:via-blue-600 hover:to-blue-500 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300"
                 >
                   {
-                    playAnimation ? <AnimatedLogo className="size-7" play={playAnimation} /> : <span>Submit Answers</span>
+                    playAnimation ? <AnimatedLogo className="size-7" play={playAnimation} /> : <span>{t("submit")}</span>
                   }
                 </Button>
                 <Button
@@ -38,7 +40,7 @@ export const App = () => {
                   onClick={() => reset()}
                   className="w-1/2 flex items-center justify-center gap-2 bg-gray-200 text-gray-700 py-3 rounded-xl shadow font-semibold text-lg tracking-wide transition-all duration-200 border-none hover:bg-gray-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gray-300"
                 >
-                  Reset
+                  {t('reset')}
                 </Button>
               </div>
             </div>
